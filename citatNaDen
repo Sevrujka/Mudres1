@@ -62,11 +62,12 @@
   </div>
 
   <script>
-    const mudrecImages = [
-      'https://drive.google.com/uc?id=1pg91yMPoSq1MBT6hl-wMLHYKPTApZcOt',
-      'https://drive.google.com/uc?id=11zUmOW5ZFvugqE1OfXHE52RS2vQRMubg',
-      'https://drive.google.com/uc?id=1-X6G0i1FalgwmzKeBlD3rNe1fSbfT2rr'
-    ];
+   const mudrecImages = [
+  'images/mudr1.png',
+  'images/mudr2.png',
+  'images/mudr3.png'
+];
+
 
     const mudrecNames = [
       'Садовник Бамбука',
