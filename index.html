@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Цитаты мудрецов</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    .container {
+      text-align: center;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    button {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      color: #fff;
+      background: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    img.mudrec {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Слова мудрецов</h1>
+    <img id="mudrecImage" alt="Мудрец" class="mudrec">
+    <p id="quote">Нажмите кнопку, чтобы увидеть цитату одного из мудрецов.</p>
+    <button onclick="generateQuote()">Показать цитату</button>
+  </div>
+
+  <script>
+    const mudrecImages = [
+      'https://drive.google.com/uc?id=1pg91yMPoSq1MBT6hl-wMLHYKPTApZcOt',
+      'https://drive.google.com/uc?id=11zUmOW5ZFvugqE1OfXHE52RS2vQRMubg',
+      'https://drive.google.com/uc?id=1-X6G0i1FalgwmzKeBlD3rNe1fSbfT2rr'
+    ];
+
+    const mudrecNames = [
+      'Садовник Бамбука',
+      'Учитель Горы',
+      'Мастер Реки'
+    ];
+
+    const quotes = {
+      sage1: [
+        "Даже самая длинная дорога начинается с первого шага — но важно ступить его с лёгким сердцем.",
+        "Как бамбук гнётся, но не ломается, так и мудрый сохраняет гибкость в любых бурях.",
+        "Не спрашивай, далёк ли путь — спроси, радостно ли идти.",
+        "Один цветок вишни стоит тысячи проповедей о весне.",
+        "Счастье — это когда утром есть чай, а вечером — история.",
+        "Лучшая музыка — это тишина между нотами.",
+        "Даже в капле росы отражается всё небо.",
+        "Если ты не можешь найти радость сегодня — ты и завтра её не узнаешь."
+      ],
+      sage2: [
+        "Осенний лист падает не потому, что слаб — он учит нас отпускать.",
+        "Река никогда не пьёт свою воду — так и мудрый не цепляется за то, что должно течь.",
+        "Даже в самом тёмном облаке есть трещина, через которую пробивается свет.",
+        "Если ты устал — сядь у дороги. Но не строй там дом.",
+        "Даже самая тёмная ночь учит звёзды сиять.",
+        "Когда идёшь сквозь колючий лес — помни, что именно они делают тебя неуязвимым.",
+        "Ручей точит камень не силой, а постоянством.",
+        "Гора становится путнику ниже, если он перестаёт считать её высоту."
+      ],
+      sage3: [
+        "Чашка чая полна, когда она пуста от суеты.",
+        "Тигриный рык впечатляет, но мудрость часто говорит шёпотом.",
+        "Зеркало не лжёт, потому что не думает.",
+        "Чем проще слово, тем глубже оно тонет в сердце.",
+        "Собирая рис, крестьянин кланяется земле — так и знание требует смирения.",
+        "Если ветер перемен дует против тебя — поправь паруса, но не меняй курс.",
+        "Зимнее дерево кажется мёртвым, но его корни уже шепчут весне.",
+        "Утро, начатое с благодарности, приносит день, наполненный благословением."
+      ]
+    };
+
+    function generateQuote() {
+      const sages = ['sage1', 'sage2', 'sage3'];
+      const randomIndex = Math.floor(Math.random() * sages.length);
+      const randomSage = sages[randomIndex];
+      const randomQuote = quotes[randomSage][Math.floor(Math.random() * quotes[randomSage].length)];
+
+      document.getElementById('mudrecImage').src = mudrecImages[randomIndex];
+      document.getElementById('quote').textContent = `"${randomQuote}" — ${mudrecNames[randomIndex]}`;
+    }
+  </script>
+</body>
+</html>
